@@ -23,19 +23,19 @@ export function Header() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="#why">
+            <NavigationMenuLink href="/#why">
               Why?
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="#how">
+            <NavigationMenuLink href="/#how">
               How?
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="#roadmap">
+            <NavigationMenuLink href="/#roadmap">
               Roadmap
             </NavigationMenuLink>
           </NavigationMenuItem>
