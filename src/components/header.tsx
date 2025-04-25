@@ -13,7 +13,7 @@ export function Header() {
     </Link>
 
     <div className="flex items-center gap-2">
-      <NavigationMenu>
+      <NavigationMenu className="sm:block hidden">
         <NavigationMenuList>
 
           <NavigationMenuItem>
