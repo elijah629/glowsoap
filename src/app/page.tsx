@@ -1,7 +1,49 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function Home() {
   return (
+    <>
+      <section>
+        <h1 className="text-3xl sm:text-7xl font-black mb-2">GlowSoap</h1>
+        <p className="text-md sm:text-xl mb-2">GlowSoap uses advanced fluorescent technology to visually train healthcare professionals and staff in sterile environments, ensuring proper handwashing technique and reducing infection risks.</p>
+        <div className="flex sm:flex-row gap-2 flex-col">
+          <Button asChild>
+            <Link href="/store">
+              PRE-ORDER
+            </Link>
+          </Button>
+          <Button variant="outline">Learn More</Button>
+        </div>
+      </section>
+
+      <Separator className="my-10" />
+
+      <section id="why">
+        <h2 className="text-3xl font-bold">Why?</h2>
+        <span className="text-9xl  font-bold">26%</span>
+        <br />
+        <span className="text-4xl">of US Hospitals do not enforce proper handwashing</span>
+      </section>
+
+      <Separator className="my-10" />
+
+      <section id="why">
+        <h2 className="text-3xl font-bold">How?</h2>
+        We did this!
+      </section>
+
+      <Separator className="my-10" />
+
+      <section id="roadmap">
+        <h2 className="text-3xl font-bold">Roadmap</h2>
+        1. 2
+      </section>
+    </>
+  );
+}
+/*
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
@@ -98,6 +140,4 @@ export default function Home() {
           Go to nextjs.org →
         </a>
       </footer>
-    </div>
-  );
-}
+    </div>*/
