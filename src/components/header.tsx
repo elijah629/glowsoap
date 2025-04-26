@@ -1,49 +1,57 @@
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
-import Image from "next/image";
-import { ModeToggle } from "./mode-toggle";
-import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu"
+import Image from "next/image"
+import Link from "next/link"
+import { ModeToggle } from "./mode-toggle"
+
+// Navigation items data structure
+const navigationItems = [
+  {
+    label: "PRE-ORDER",
+    href: "/store",
+  },
+  {
+    label: "Why?",
+    href: "/#why",
+  },
+  {
+    label: "How?",
+    href: "/#how",
+  },
+  {
+    label: "Roadmap",
+    href: "/#roadmap",
+  },
+]
 
 export function Header() {
-  return <header className="p-4 border-b-2 flex h-16 items-center justify-between">
-    {/* Logo */}
+  return (
+    <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b p-4 backdrop-blur-sm bg-secondary/40">
+      {/* Logo */}
+      <Link href="/" className="flex items-center">
+        <Image width={128} height={32} priority alt="Good Products" className="hidden dark:block" src="/dark/goodproducts.svg" />
+        <Image width={128} height={32} priority alt="Good Products" className="dark:hidden block" src="/goodproducts.svg" />
+      </Link>
 
-    <Link href="/">
-      <Image width={128} height={0} alt="Good Products" className="hidden dark:block" src="/dark/goodproducts.svg" />
-      <Image width={128} height={0} alt="Good Products" className="dark:hidden block" src="/goodproducts.svg" />
-    </Link>
-
-    <div className="flex items-center gap-2">
-      <NavigationMenu className="sm:block hidden">
-        <NavigationMenuList>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/store">
-              Pre-order
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/#why">
-              Why?
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/#how">
-              How?
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/#roadmap">
-              Roadmap
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-        </NavigationMenuList>
-      </NavigationMenu>
-      <ModeToggle />
-    </div>
-
-  </header >;
+      <div className="flex items-center gap-4">
+        <NavigationMenu className="hidden sm:block">
+          <NavigationMenuList className="gap-1">
+            {navigationItems.map((item) => (
+              <NavigationMenuItem key={item.label}>
+                <NavigationMenuLink href={item.href}>
+                  {item.label}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <ModeToggle />
+      </div>
+    </header>
+  )
 }
+

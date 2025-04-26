@@ -1,159 +1,50 @@
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
-import Link from "next/link";
+"use client"
+
+import { useScroll, useSpring } from "framer-motion"
+import { Separator } from "@/components/ui/separator"
+import GridBackground from "@/components/grid-background"
+import HeroSection from "@/components/sections/hero-section"
+import WhySection from "@/components/sections/why-section"
+import HowItWorksSection from "@/components/sections/how-section"
+import RoadmapSection from "@/components/sections/roadmap-section"
+import FooterCTA from "@/components/sections/footer-cta"
+import { cn } from "@/lib/utils"
+import PrinciplesSection from "@/components/sections/principles-section"
+import HowSection from "@/components/sections/how-section"
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+
+  const smoothProgress = useSpring(scrollYProgress, { damping: 15, stiffness: 100 })
+
   return (
     <>
-      <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="flex flex-col space-y-6">
-            <h1 className="text-3xl sm:text-7xl font-black">GlowSoap</h1>
-            <p className="text-md sm:text-xl">
-              GlowSoap uses advanced fluorescent technology to visually train healthcare professionals and staff in
-              sterile environments, ensuring proper handwashing technique and reducing infection risks.
-            </p>
-            <div className="flex sm:flex-row gap-2 flex-col">
-              <Button asChild>
-                <Link href="/store">PRE-ORDER</Link>
-              </Button>
-              <Button variant="outline">Learn More</Button>
-            </div>
-          </div>
-          <div className="order-first md:order-last">
-            <Image
-              src="https://placehold.co/600/png"
-              alt="Product image"
-              width={600}
-              height={600}
-              className="aspect-square w-full object-cover rounded-lg"
-              priority
-            />
-          </div>
-        </div>
-      </section>
+      {/* Grid Background */}
+      <GridBackground />
 
-      <Separator className="my-10" />
+      {/* Hero Section */}
+      <HeroSection scrollProgress={smoothProgress} />
 
-      <section id="why">
-        <h2 className="text-3xl font-bold">Why?</h2>
-        <span className="text-9xl  font-bold">26%</span>
-        <br />
-        <span className="text-4xl">of US Hospitals do not enforce proper handwashing</span>
-      </section>
+      <Separator />
 
-      <Separator className="my-10" />
+      {/* Why Section */}
+      <WhySection />
 
-      <section id="why">
-        <h2 className="text-3xl font-bold">How?</h2>
-        We did this!
-      </section>
+      <Separator />
 
-      <Separator className="my-10" />
+      <HowSection />
 
-      <section id="roadmap">
-        <h2 className="text-3xl font-bold">Roadmap</h2>
-        1. 2
-      </section>
+      <Separator />
+
+      <PrinciplesSection scrollProgress={smoothProgress} />
+
+      <Separator />
+
+      {/* Roadmap Section */}
+      <RoadmapSection scrollProgress={smoothProgress} />
+
+      {/* Footer CTA */}
+      <FooterCTA />
     </>
-  );
+  )
 }
-/*
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>*/

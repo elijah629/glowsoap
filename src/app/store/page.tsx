@@ -1,6 +1,6 @@
 
 import Image from "next/image"
-import { Truck, ShieldCheck, Heart, Share2, Minus, Plus } from "lucide-react"
+import { Truck, ShieldCheck, Heart, Share2, Minus, Plus, Flag } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -102,6 +102,13 @@ export default function ProductPage() {
               <div>
                 <div className="font-medium">30-Day Returns</div>
                 <div className="text-sm text-muted-foreground">Shop with confidence with our 30-day return policy</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <Flag className="h-5 w-5 text-muted-foreground" />
+              <div>
+                <div className="font-medium">Made in USA</div>
+                <div className="text-sm text-muted-foreground">Unnaffected by the global trade war</div>
               </div>
             </div>
           </div>
