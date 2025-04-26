@@ -13,7 +13,7 @@ export function HowSection() {
         "Once you pump soap, place your hands under the GlowSoap dispenser. It will release fluorescent powder into the soap on your hands.",
     },
     {
-      title: "✨ GLOW! ⭐",
+      title: "GLOW! ⭐",
       description:
         "Then, the GlowSoap will activate its UV light on the side, illuminating the sink area. When you wash your hands, the parts you haven't scrubbed yet will glow.",
     },

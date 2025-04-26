@@ -30,7 +30,7 @@ export function RoadmapSection() {
   ]
 
   return (
-    <section id="roadmap" className="container mx-auto p-4">
+    <section id="roadmap" className="container mx-auto p-4 overflow-hidden">
       <motion.h2
         className="text-3xl font-bold mb-16 text-center"
         initial={{ opacity: 0, y: 20 }}

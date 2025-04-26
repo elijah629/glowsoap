@@ -16,10 +16,13 @@ export function HeroSection({ scrollProgress }: HeroSectionProps) {
   const heroOpacity = useTransform(scrollProgress, [0, 0.1, 0.2], [1, 1, 0.8])
 
   return (
-    <section className="min-h-screen flex items-center h-[200vh] bg-[linear-gradient(to_bottom,#FF00EE,transparent_40%,transparent_60%,#0FF_85%,white_100%)]">
+    <section className="min-h-screen relative h-[200vh] w-full overflow-hidden">
+      {/* Gradient background contained in absolute div */}
+      <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_bottom,#FF00EE,transparent_40%,transparent_60%,#0FF_85%,white_100%)]" />
+
       <motion.div
         style={{ y: heroTextY, opacity: heroOpacity }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container mx-auto px-4"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container mx-auto px-4 pt-16 relative z-10 h-screen sticky top-0"
       >
         <motion.div
           className="flex flex-col space-y-6"
@@ -44,14 +47,10 @@ export function HeroSection({ scrollProgress }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <Button asChild size="lg">
-              <Link href="/store">
-                PRE-ORDER
-              </Link>
+              <Link href="/store">PRE-ORDER</Link>
             </Button>
             <Button asChild variant="outline" className="border-primary" size="lg">
-              <Link href="/#why">
-                LEARN MORE
-              </Link>
+              <Link href="/#why">LEARN MORE</Link>
             </Button>
           </motion.div>
         </motion.div>

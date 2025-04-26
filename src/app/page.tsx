@@ -18,8 +18,7 @@ export default function Home() {
   const smoothProgress = useSpring(scrollYProgress, { damping: 15, stiffness: 100 })
 
   return (
-    <main>
-      {/* Grid Background */}
+    <main className="-mt-16">
       <GridBackground />
 
       <ZoomText />
@@ -28,7 +27,6 @@ export default function Home() {
 
       <WipeTransition before="https://placehold.co/800x600/FFFFFF/D2B48C?text=Hand" after="https://placehold.co/800x600/000000/00ffff?text=Hand" />
 
-      {/* Why Section */}
       <WhySection />
 
       <HowSection />
@@ -39,10 +37,8 @@ export default function Home() {
 
       <Separator />
 
-      {/* Roadmap Section */}
       <RoadmapSection />
 
-      {/* Footer CTA */}
       <FooterCTA />
     </main>
   )

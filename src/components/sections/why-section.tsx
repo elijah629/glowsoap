@@ -6,7 +6,7 @@ import AnimatedCounter from "@/components/animated-counter"
 export function WhySection() {
 
   return (
-    <section id="why" className="pt-20 pb-40 bg-gradient-to-b from-black to-accent text-white">
+    <section id="why" className="pt-20 pb-40 bg-gradient-to-b from-black via-transparent to-accent overflow-hidden">
       <motion.div className="container mx-auto px-4 text-center">
         <motion.h2
           className="text-3xl font-bold mb-10"

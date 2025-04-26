@@ -11,17 +11,15 @@ export function ZoomText() {
     offset: ["start start", "end end"],
   })
 
-  // Map scroll progress from 0 to 0.3 (30% of scroll) for scaling
   const rawScale = useTransform(scrollYProgress, [0, 1], [1, 300])
 
-  // Smooth the scaling with spring
   const textScale = useSpring(rawScale, {
     stiffness: 100,
     damping: 30,
   })
 
   return (
-    <section ref={ref} className="relative h-[400vh]">
+    <section ref={ref} className="relative h-[300vh]">
       <div className="sticky top-0 z-10 flex items-center justify-center h-screen overflow-hidden">
         <div className="relative flex items-center justify-center">
           <motion.div
