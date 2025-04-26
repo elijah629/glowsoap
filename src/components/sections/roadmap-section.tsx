@@ -1,15 +1,8 @@
 "use client"
 
-import { motion, type MotionValue, useTransform } from "framer-motion"
-import ParallaxSection from "@/components/parallax-section"
+import { motion } from "framer-motion"
 
-interface RoadmapSectionProps {
-  scrollProgress: MotionValue<number>
-}
-
-export default function RoadmapSection({ scrollProgress }: RoadmapSectionProps) {
-  const roadmapY = useTransform(scrollProgress, [0.6, 1], [100, 0])
-
+export function RoadmapSection() {
   const roadmapItems = [
     {
       period: "H1 2025",
@@ -37,63 +30,61 @@ export default function RoadmapSection({ scrollProgress }: RoadmapSectionProps) 
   ]
 
   return (
-    <ParallaxSection id="roadmap">
-      <motion.div className="container mx-auto px-4" style={{ y: roadmapY }}>
-        <motion.h2
-          className="text-3xl font-bold mb-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+    <section id="roadmap" className="container mx-auto p-4">
+      <motion.h2
+        className="text-3xl font-bold mb-16 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Roadmap
+      </motion.h2>
+
+      <div className="relative">
+        {/* Timeline line */}
+        <motion.div
+          className="absolute left-[20px] md:left-[50%] top-0 bottom-0 w-1 bg-muted"
+          initial={{ height: 0 }}
+          whileInView={{ height: "100%" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Roadmap
-        </motion.h2>
+          transition={{ duration: 1.5 }}
+        />
 
-        <div className="relative">
-          {/* Timeline line */}
+        {/* Timeline items */}
+        {roadmapItems.map((item, i) => (
           <motion.div
-            className="absolute left-[20px] md:left-[50%] top-0 bottom-0 w-1 bg-muted"
-            initial={{ height: 0 }}
-            whileInView={{ height: "100%" }}
+            key={i}
+            className={`flex items-start gap-8 mb-20 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} flex-row`}
+            initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
-          />
+            transition={{ duration: 0.6, delay: 0.2 * i }}
+          >
+            <div className={`hidden md:block flex-1 ${i % 2 === 0 ? "text-right" : "text-left"}`} />
 
-          {/* Timeline items */}
-          {roadmapItems.map((item, i) => (
             <motion.div
-              key={i}
-              className={`flex items-start gap-8 mb-20 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} flex-row`}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="relative z-10 w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-0 md:ml-0"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 * i }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                delay: 0.3 * i + 0.2,
+              }}
             >
-              <div className={`hidden md:block flex-1 ${i % 2 === 0 ? "text-right" : "text-left"}`} />
-
-              <motion.div
-                className="relative z-10 w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 ml-0 md:ml-0"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  delay: 0.3 * i + 0.2,
-                }}
-              >
-                <span className="text-primary-foreground font-bold text-sm">{i + 1}</span>
-              </motion.div>
-
-              <div className={`flex-1 pl-4 md:pl-0 ${i % 2 === 0 ? "md:text-left" : "md:text-right"} text-left`}>
-                <span className="text-lg font-bold block mb-1">{item.period}</span>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
+              <span className="text-primary-foreground font-bold text-sm">{i + 1}</span>
             </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </ParallaxSection>
+
+            <div className={`flex-1 pl-4 md:pl-0 ${i % 2 === 0 ? "md:text-left" : "md:text-right"} text-left`}>
+              <span className="text-lg font-bold block mb-1">{item.period}</span>
+              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-muted-foreground">{item.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   )
 }

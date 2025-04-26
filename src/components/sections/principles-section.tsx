@@ -1,13 +1,12 @@
 "use client"
 
 import { motion, type MotionValue, useTransform } from "framer-motion"
-import ParallaxSection from "@/components/parallax-section"
 
 interface PrinciplesSectionProps {
   scrollProgress: MotionValue<number>
 }
 
-export default function PrinciplesSection({ scrollProgress }: PrinciplesSectionProps) {
+export function PrinciplesSection({ scrollProgress }: PrinciplesSectionProps) {
   const howContentY = useTransform(scrollProgress, [0.3, 0.6], [50, -50])
 
 
@@ -31,8 +30,8 @@ export default function PrinciplesSection({ scrollProgress }: PrinciplesSectionP
   ]
 
   return (
-    <ParallaxSection id="how" className="py-20 bg-secondary/70">
-      <motion.div className="container mx-auto px-4" style={{ y: howContentY }}>
+    <section id="how" className="pt-20 bg-secondary/70">
+      <motion.div className="container mx-auto p-4" style={{ y: howContentY }}>
         <motion.h2
           className="text-3xl font-bold mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +46,7 @@ export default function PrinciplesSection({ scrollProgress }: PrinciplesSectionP
           {principles.map((principle, i) => (
             <motion.div
               key={i}
-              className="p-6 rounded-lg bg-background border"
+              className="p-6 rounded-lg bg-background border transition-all hover:scale-105 hover:shadow-md"
               transition={{ duration: 0.6, delay: 0.2 * i }}
               initial={{ opacity: 0, y: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -60,6 +59,6 @@ export default function PrinciplesSection({ scrollProgress }: PrinciplesSectionP
           ))}
         </div>
       </motion.div>
-    </ParallaxSection>
+    </section>
   )
 }

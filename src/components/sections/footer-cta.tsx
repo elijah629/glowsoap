@@ -3,11 +3,10 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import ParallaxSection from "@/components/parallax-section"
 
-export default function FooterCTA() {
+export function FooterCTA() {
   return (
-    <ParallaxSection className="bg-primary text-primary-foreground py-20">
+    <section className="bg-primary text-primary-foreground py-20">
       <motion.div
         className="container mx-auto px-4 text-center"
         initial={{ opacity: 0, y: 50 }}
@@ -23,6 +22,6 @@ export default function FooterCTA() {
           <Link href="/store">PRE-ORDER NOW</Link>
         </Button>
       </motion.div>
-    </ParallaxSection>
+    </section>
   )
 }

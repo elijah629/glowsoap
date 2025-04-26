@@ -4,20 +4,19 @@ import { motion, type MotionValue, useTransform } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import ParallaxSection from "@/components/parallax-section"
 import AnimatedText from "@/components/animated-text"
 
 interface HeroSectionProps {
   scrollProgress: MotionValue<number>
 }
 
-export default function HeroSection({ scrollProgress }: HeroSectionProps) {
+export function HeroSection({ scrollProgress }: HeroSectionProps) {
   const heroImageY = useTransform(scrollProgress, [0, 0.2], [0, -50])
   const heroTextY = useTransform(scrollProgress, [0, 0.2], [0, 50])
   const heroOpacity = useTransform(scrollProgress, [0, 0.1, 0.2], [1, 1, 0.8])
 
   return (
-    <ParallaxSection className="min-h-screen flex items-center">
+    <section className="min-h-screen flex items-center h-[200vh] bg-[linear-gradient(to_bottom,#FF00EE,transparent_40%,transparent_60%,#0FF_85%,white_100%)]">
       <motion.div
         style={{ y: heroTextY, opacity: heroOpacity }}
         className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center container mx-auto px-4"
@@ -69,12 +68,12 @@ export default function HeroSection({ scrollProgress }: HeroSectionProps) {
               alt="GlowSoap product image"
               width={600}
               height={600}
-              className="aspect-square w-full object-cover rounded-lg relative z-10"
+              className="aspect-square w-full object-cover rounded-lg relative z-10 border shadow-xl"
               priority
             />
           </div>
         </motion.div>
       </motion.div>
-    </ParallaxSection>
+    </section>
   )
 }

@@ -1,8 +1,6 @@
-"use client"
-
 import { cn } from "@/lib/utils"
 
-export default function HowSection() {
+export function HowSection() {
 
   const steps = [
     {
@@ -24,10 +22,10 @@ export default function HowSection() {
   return (
     <section id="how" className="relative">
       {steps.map((step, i) => (
-        <div key={i} className={cn("h-screen top-0 sticky flex items-center justify-center", ["bg-accent", "bg-[#0FF]", "bg-yellow-300"][i])}>
-          <div className="text-black">
-            <h3 className="text-4xl font-bold mb-4">{step.title}</h3>
-            <p className="leading-relaxed">{step.description}</p>
+        <div key={i} className={cn("h-screen p-5 top-0 sticky flex items-center justify-center", ["bg-accent", "bg-[#0FF]", "bg-yellow-300"][i])}>
+          <div className="text-black max-w-md">
+            <h3 className="text-6xl font-bold mb-4">{step.title}</h3>
+            <p className="text-xl leading-relaxed">{step.description}</p>
           </div>
         </div>
       ))}

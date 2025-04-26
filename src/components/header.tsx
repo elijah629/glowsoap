@@ -30,7 +30,7 @@ const navigationItems = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b p-4 backdrop-blur-sm bg-secondary/40">
+    <header className="flex h-16 items-center justify-between border-b p-4 z-50">
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image width={128} height={32} priority alt="Good Products" className="hidden dark:block" src="/dark/goodproducts.svg" />

@@ -1,13 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import ParallaxSection from "@/components/parallax-section"
 import AnimatedCounter from "@/components/animated-counter"
 
-export default function WhySection() {
+export function WhySection() {
 
   return (
-    <ParallaxSection id="why" className="pt-20 pb-40">
+    <section id="why" className="pt-20 pb-40 bg-gradient-to-b from-black to-accent text-white">
       <motion.div className="container mx-auto px-4 text-center">
         <motion.h2
           className="text-3xl font-bold mb-10"
@@ -48,6 +47,6 @@ export default function WhySection() {
           of American hospitals do not enforce proper handwashing
         </motion.span>
       </motion.div>
-    </ParallaxSection>
+    </section>
   )
 }
