@@ -8,7 +8,6 @@ interface PrinciplesSectionProps {
 }
 
 export default function PrinciplesSection({ scrollProgress }: PrinciplesSectionProps) {
-  const howBgY = useTransform(scrollProgress, [0.3, 0.6], [0, -100])
   const howContentY = useTransform(scrollProgress, [0.3, 0.6], [50, -50])
 
 
