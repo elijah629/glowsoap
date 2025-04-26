@@ -1,20 +1,36 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <section>
-        <h1 className="text-3xl sm:text-7xl font-black mb-2">GlowSoap</h1>
-        <p className="text-md sm:text-xl mb-2">GlowSoap uses advanced fluorescent technology to visually train healthcare professionals and staff in sterile environments, ensuring proper handwashing technique and reducing infection risks.</p>
-        <div className="flex sm:flex-row gap-2 flex-col">
-          <Button asChild>
-            <Link href="/store">
-              PRE-ORDER
-            </Link>
-          </Button>
-          <Button variant="outline">Learn More</Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div className="flex flex-col space-y-6">
+            <h1 className="text-3xl sm:text-7xl font-black">GlowSoap</h1>
+            <p className="text-md sm:text-xl">
+              GlowSoap uses advanced fluorescent technology to visually train healthcare professionals and staff in
+              sterile environments, ensuring proper handwashing technique and reducing infection risks.
+            </p>
+            <div className="flex sm:flex-row gap-2 flex-col">
+              <Button asChild>
+                <Link href="/store">PRE-ORDER</Link>
+              </Button>
+              <Button variant="outline">Learn More</Button>
+            </div>
+          </div>
+          <div className="order-first md:order-last">
+            <Image
+              src="https://placehold.co/600/png"
+              alt="Product image"
+              width={600}
+              height={600}
+              className="aspect-square w-full object-cover rounded-lg"
+              priority
+            />
+          </div>
         </div>
       </section>
 

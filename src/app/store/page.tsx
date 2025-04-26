@@ -13,7 +13,7 @@ export default function ProductPage() {
         <div className="space-y-4">
           <div className="overflow-hidden rounded-lg border bg-white">
             <Image
-              src="/placeholder.svg?height=600&width=600"
+              src="https://placehold.co/600/png"
               alt="Product image"
               width={600}
               height={600}
@@ -25,7 +25,7 @@ export default function ProductPage() {
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="overflow-hidden rounded-lg border bg-white">
                 <Image
-                  src={`/placeholder.svg?height=150&width=150&text=Image ${i}`}
+                  src={`https://placehold.co/150/png`}
                   alt={`Product image ${i}`}
                   width={150}
                   height={150}
