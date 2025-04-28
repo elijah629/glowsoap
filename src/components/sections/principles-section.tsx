@@ -1,15 +1,8 @@
 "use client"
 
-import { motion, type MotionValue, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 
-interface PrinciplesSectionProps {
-  scrollProgress: MotionValue<number>
-}
-
-export function PrinciplesSection({ scrollProgress }: PrinciplesSectionProps) {
-  const howContentY = useTransform(scrollProgress, [0.3, 0.6], [50, -50])
-
-
+export function PrinciplesSection() {
   const principles = [
     {
       number: "01",
@@ -31,7 +24,7 @@ export function PrinciplesSection({ scrollProgress }: PrinciplesSectionProps) {
 
   return (
     <section id="how" className="pt-20 bg-secondary/70">
-      <motion.div className="container mx-auto p-4" style={{ y: howContentY }}>
+      <motion.div className="container mx-auto p-4" initial={{ y: 50 }} whileInView={{ y: -50 }} viewport={{ once: true }}>
         <motion.h2
           className="text-3xl font-bold mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}

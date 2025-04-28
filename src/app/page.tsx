@@ -1,6 +1,3 @@
-"use client"
-
-import { useScroll, useSpring } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
 import GridBackground from "@/components/grid-background"
 import { HeroSection } from "@/components/sections/hero-section"
@@ -13,17 +10,13 @@ import { ZoomText } from "@/components/sections/zoom-text"
 import { WipeTransition } from "@/components/sections/wipe-transition"
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-
-  const smoothProgress = useSpring(scrollYProgress, { damping: 15, stiffness: 100 })
-
   return (
     <main className="-mt-16">
       <GridBackground />
 
       <ZoomText />
 
-      <HeroSection scrollProgress={smoothProgress} />
+      <HeroSection />
 
       <WipeTransition before="https://placehold.co/800x600/FFFFFF/D2B48C?text=Hand" after="https://placehold.co/800x600/000000/00ffff?text=Hand" />
 
@@ -33,7 +26,7 @@ export default function Home() {
 
       <Separator />
 
-      <PrinciplesSection scrollProgress={smoothProgress} />
+      <PrinciplesSection />
 
       <Separator />
 

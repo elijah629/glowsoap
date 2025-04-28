@@ -49,7 +49,10 @@ export default function AnimatedText({ text, className, delay = 0 }: AnimatedTex
       className={cn("flex overflow-hidden", className)}
       variants={container}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{
+        once: true,
+      }}
     >
       {letters.map((letter, index) => (
         <motion.span key={index} variants={child}>
@@ -59,3 +62,4 @@ export default function AnimatedText({ text, className, delay = 0 }: AnimatedTex
     </motion.h1>
   )
 }
+
