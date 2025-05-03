@@ -18,7 +18,8 @@ export default function Home() {
 
       <HeroSection />
 
-      <WipeTransition before="https://placehold.co/800x600/FFFFFF/D2B48C?text=Hand" after="https://placehold.co/800x600/000000/00ffff?text=Hand" />
+      {/*<WipeTransition before="https://placehold.co/800x600/FFFFFF/D2B48C?text=Hand" after="https://placehold.co/800x600/000000/00ffff?text=Hand" />*/}
+      <WipeTransition before="/noglow.jpg" after="/glowing.jpg" />
 
       <WhySection />
 

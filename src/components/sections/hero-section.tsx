@@ -56,7 +56,7 @@ export function HeroSection() {
         >
           <div className="relative">
             <Image
-              src="https://placehold.co/600/png"
+              src="/GlowSoap.png"
               alt="GlowSoap product image"
               width={600}
               height={600}

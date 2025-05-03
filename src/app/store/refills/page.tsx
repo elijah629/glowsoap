@@ -7,35 +7,24 @@ import {
   Minus,
   Plus,
   Flag,
-  MessageCircleQuestion,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function ProductPage() {
   return (
     <div className="container mx-auto px-4 py-6 md:py-12">
-      <Link href="/store/refills">
-        <Alert variant="destructive" className="m-4">
-          <MessageCircleQuestion className="h-4 w-4" />
-          <AlertTitle>Looking for refills?</AlertTitle>
-          <AlertDescription>Click here!</AlertDescription>
-        </Alert>
-      </Link>
-
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
         {/* Product Images */}
         <div className="space-y-4">
-          <div className="overflow-hidden rounded-lg border bg-white">
+          <div className="overflow-hidden rounded-lg border">
             <Image
-              src="/GlowSoap.png"
+              src="/GlowSoapRefill.png"
               alt="Product image"
               width={600}
               height={600}
-              className="aspect-square w-full object-cover"
+              className="aspect-square w-full object-contain object-center"
               priority
             />
           </div>
@@ -49,22 +38,13 @@ export default function ProductPage() {
                 PRE-ORDER
               </Badge>
             </div>
-            <h1 className="text-3xl font-bold">GlowSoap v0.0.1</h1>
+            <h1 className="text-3xl font-bold">GlowSoap Refill</h1>
             <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold">$30.00</span>
-              <span className="text-sm text-muted-foreground line-through">
-                $37.50
-              </span>
-              <Badge variant="secondary" className="text-xs">
-                20% OFF FOR TESTERS
-              </Badge>
+              <span className="text-3xl font-bold">$10.00</span>
             </div>
           </div>
 
-          <p className="text-muted-foreground">
-            Pre-order the beta version of the GlowSoap for 20% off (applied
-            after first feedback report)
-          </p>
+          <p className="text-muted-foreground">GlowSoap Refills</p>
 
           {/* Quantity */}
           <div className="space-y-4">
@@ -133,7 +113,7 @@ export default function ProductPage() {
         </div>
         <div>
           <h3 className="text-xl font-bold">Product Description</h3>
-          The GlowSoap v0.0.1 (BETA)
+          The Official place for GlowSoap Refills
         </div>
       </div>
     </div>

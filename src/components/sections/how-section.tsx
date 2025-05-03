@@ -5,19 +5,20 @@ export function HowSection() {
   const steps = [
     {
       title: "ATTACH...",
-      description: "First, the GlowSoap is attached to the side of a generic soap dispenser.",
+      description:
+        "First, the GlowSoap is attached to the side of a generic soap dispenser.",
     },
     {
       title: "PUMP...",
       description:
-        "Once you pump soap, place your hands under the GlowSoap dispenser. It will release fluorescent powder into the soap on your hands.",
+        "Once you pump soap, spray the flourescent soap onto your hands under the GlowSoap.",
     },
     {
       title: "GLOW! ⭐",
       description:
-        "Then, the GlowSoap will activate its UV light on the side, illuminating the sink area. When you wash your hands, the parts you haven't scrubbed yet will glow.",
+        "Then, place your hands under the GlowSoap’s UV light. When you wash your hands, the parts you haven’t scrubbed yet will glow.",
     },
-  ]
+  ];
 
   return (
     <section id="how" className="relative">

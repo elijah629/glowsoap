@@ -8,26 +8,27 @@ export function RoadmapSection() {
       period: "H1 2025",
       title: "PERFECT DESIGN FOR PRODUCTION",
       description:
-        "We will refine our design for mass production in the second half of the year. Initially, we will introduce a limited number of hand-built preview models.",
+        "We will refine our design for mass production in the second half of the year. Initially, we will introduce a limited number (10-20) of hand-built preview models.",
     },
     {
       period: "H2 2025",
       title: "MASS PRODUCTION",
       description:
-        "Initiate the automated production process of GlowSoap with rigorous quality assurance measures, while also deploying on-site staff to meticulously inspect for any potential defects.",
+        "Initiate the automated production process of GlowSoap with rigorous quality assurance measures, while also deploying on-site staff to meticulously inspect for any potential defects. Additionally, we will incorporate an automatic dispenser and light system.\nSales Volume: 200.",
     },
     {
       period: "H1 2026",
       title: "IN-HOUSE FLUORESCENT POWDER",
-      description: "We will opt to produce the fluorescent powder internally within our organization.",
+      description:
+        "We will opt to produce the fluorescent powder internally within our organization.\nSales Volume: 1000.",
     },
     {
       period: "H2 2026",
       title: "FINAL PRODUCT",
       description:
-        "During the second half of the year, our primary emphasis will be on enhancing product stability to ensure a seamless customer experience.",
+        "During the second half of the year, our primary emphasis will be on enhancing product stability to ensure a seamless customer experience.\nSales Volume: 10,000+.",
     },
-  ]
+  ];
 
   return (
     <section id="roadmap" className="container mx-auto p-4 overflow-hidden">

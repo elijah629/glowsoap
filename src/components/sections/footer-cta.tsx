@@ -16,7 +16,7 @@ export function FooterCTA() {
       >
         <h2 className="text-4xl font-bold mb-6">Ready to transform healthcare hygiene?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Join us in our mission to reduce infections and improve healthcare standards worldwide.
+          Join the 74% to reduce infections and improve healthcare standards worldwide.
         </p>
         <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">
           <Link href="/store">PRE-ORDER NOW</Link>
